@@ -1,0 +1,2 @@
+primaryid$caseid$caseversion$i_f_code$event_dt$mfr_dt$init_fda_dt$fda_dt$rept_cod$auth_num$mfr_num$mfr_sndr$lit_ref$age$age_cod$age_grp$sex$e_sub$wt$wt_cod$rept_dt$to_mfr$occp_cod$reporter_country$occr_country$nda_num
+100115733$10011573$3$F$20130801$20221118$20140314$20221123$EXP$test$CA-MERCK-1403CAN005674$MERCK$test$75$YR$test$M$Y$58.05$KG$20221123$$HP$CA$CA$9999
