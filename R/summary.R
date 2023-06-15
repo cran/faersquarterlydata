@@ -34,10 +34,6 @@ summary_faersdata <- function(tabular_faers_data){
   tabular_faers_data_summary$reaction <- 
     tabular_faers_data %>%
     mutate_at("pt", ~stringr::str_squish(.)) %>% 
-    mutate(age_YR = case_when(age_cod == "YR" ~ as.numeric(age),
-                           age_cod == "MON" ~ as.numeric(age)/30,
-                           age_cod == "DY" ~ as.numeric(age)*365,
-                           TRUE ~ as.numeric(age))) %>% 
     group_by(pt) %>% 
     summarize(n_ADR = n(),
               age_mean = round(mean(as.numeric(eval(parse(text = "age_YR"))), na.rm = TRUE)),

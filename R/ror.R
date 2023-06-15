@@ -144,12 +144,14 @@ estimate_infoc <- function(n11, n10, n01, n00){
 #' @param event_of_interest_col a string, specifying the event of interest. Must me a column name of `tabular_faers_data`.
 #' @param ... arguments passed to `estimate_ror` like `ic_range`.
 #'
-#' @return tibble with the event of interest counts, group of interest counts and the respective estimated measures of association.
+#' @return tibble with the event of interest counts, group of interest counts and the respective estimated measures of association 
+#' (ROR and its IC, PRR and its IC, Information Component and Chi-squared statisti with Yates correction.
 #' @export
 #' @import dplyr
 #'
 #' @examples 
-#' estimate_ror_bygroup(tabular_faers_data = dplyr::filter(unified_als_data, sex %in% c("M", "F")),
+#' estimate_ror_bygroup(tabular_faers_data = dplyr::filter(als_faers_data_unified, 
+#' sex %in% c("M", "F")),
 #' group_of_interest_col = "sex", 
 #' group_of_interest_ref = "M", 
 #' event_of_interest_col = "pt") 

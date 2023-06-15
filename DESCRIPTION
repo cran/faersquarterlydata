@@ -2,7 +2,7 @@ Package: faersquarterlydata
 Type: Package
 Title: FDA Adverse Event Reporting System Quarterly Data Extracting
         Tool
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: c(person(given = "Luis", 
     family = "Garcez", 
     role = c("aut", "cre", "cph"), 
@@ -23,8 +23,8 @@ Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2023-05-23 15:42:31 UTC; luis.ferreira
+Packaged: 2023-06-15 13:54:25 UTC; luis.ferreira
 Author: Luis Garcez [aut, cre, cph] (<https://orcid.org/0000-0002-8637-7946>),
   Luisa Prada [aut]
 Repository: CRAN
-Date/Publication: 2023-05-24 08:40:03 UTC
+Date/Publication: 2023-06-15 14:20:02 UTC

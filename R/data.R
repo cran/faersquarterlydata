@@ -6,7 +6,7 @@
 #'
 #' @format A data frame with 200 rows and 38 columns:
 #' @source <https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files>
-"als_list"
+"als_faers_data"
 
 
 #' Tabular ASCII data example
@@ -15,7 +15,7 @@
 #' Data frame originated from \link{unify_tabular_ascii}
 #'
 #' @format A data frame with 1635 rows and 40 columns.
-"unified_als_data"
+"als_faers_data_unified"
 
 
 #' List of approved products by FDA
