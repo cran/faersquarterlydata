@@ -15,3 +15,8 @@ A data frame representing FAERS data, with all components from the list joined.
 \description{
 Turn the list elements returned from \link{retrieve_faersascii} into a tabular format
 }
+\examples{
+unify_tabular_ascii(ascii_list = als_faers_data)
+
+
+}

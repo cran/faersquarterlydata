@@ -4,6 +4,8 @@
 #' @param tabular_faers_data a tibble corresponding to the unified FAERS tabular format. Output of function \link{unify_tabular_ascii} 
 #'
 #' @return A list with a findings summary
+#' @examples
+#' summary_faersdata(als_faers_data_unified)
 #' @export
 summary_faersdata <- function(tabular_faers_data){
   

@@ -150,11 +150,11 @@ estimate_infoc <- function(n11, n10, n01, n00){
 #' @import dplyr
 #'
 #' @examples 
-#' estimate_ror_bygroup(tabular_faers_data = dplyr::filter(als_faers_data_unified, 
-#' sex %in% c("M", "F")),
-#' group_of_interest_col = "sex", 
-#' group_of_interest_ref = "M", 
-#' event_of_interest_col = "pt") 
+#' estimate_ror_bygroup(tabular_faers_data = dplyr::filter(als_faers_data_unified,
+#' sex %in% c("M", "F") ),
+#' group_of_interest_col = "sex",
+#' group_of_interest_ref = "M",
+#' event_of_interest_col = "pt")
 #' 
 #' 
 estimate_ror_bygroup <- function(tabular_faers_data, 

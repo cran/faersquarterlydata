@@ -332,6 +332,9 @@ retrieve_faersascii <- function(ascii_dir, cache_path = NULL, drug_indication_pa
 #' Turn the list elements returned from \link{retrieve_faersascii} into a tabular format
 #'
 #' @param ascii_list list from \link{retrieve_faersascii}
+#' @examples
+#' unify_tabular_ascii(ascii_list = als_faers_data)
+#' 
 #'
 #' @return A data frame representing FAERS data, with all components from the list joined.
 #' @export
@@ -368,7 +371,7 @@ unify_tabular_ascii <- function(ascii_list) {
   
   unified_faers <- ascii_list$reaction %>%
     left_join(distinct(ascii_list$demographics, primaryid, caseid, .keep_all = TRUE), 
-              by = c("primaryid", "caseid")) %>%
+              by = c("primaryid", "caseid"), relationship = "many-to-many") %>%
     mutate(patient_drug = lapply(as.integer(primaryid), FUN = function(x) {
       drug_indi_info %>%
         filter(primaryid == x) %>%
@@ -397,7 +400,7 @@ unify_tabular_ascii <- function(ascii_list) {
       ungroup() %>% suppressWarnings(), by = c("primaryid", "caseid"))  %>% 
     mutate(age_YR = case_when(age_cod == "YR" ~ as.numeric(age),
                               age_cod == "DEC" ~ as.numeric(age)*10,
-                              age_cod == "MON" ~ as.numeric(age)/30,
+                              age_cod == "MON" ~ as.numeric(age)/12,
                               age_cod == "WK" ~ as.numeric(age)/(365/7),
                               age_cod == "DY" ~ as.numeric(age)/365,
                               age_cod == "HR" ~ as.numeric(age)/(365*24),

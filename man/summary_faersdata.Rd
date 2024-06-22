@@ -15,3 +15,6 @@ A list with a findings summary
 \description{
 FAERS description
 }
+\examples{
+summary_faersdata(als_faers_data_unified)
+}
