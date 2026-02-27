@@ -6,7 +6,7 @@
 \alias{faersquarterlydata-package}
 \title{faersquarterlydata: FDA Adverse Event Reporting System Quarterly Data Extracting Tool}
 \description{
-An easy framework to read FDA Adverse Event Reporting System XML/ASCII files \url{https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files}.
+An easy framework to read FDA Adverse Event Reporting System XML/ASCII files.
 }
 \author{
 \strong{Maintainer}: Luis Garcez \email{luisgarcez1@gmail.com} (\href{https://orcid.org/0000-0002-8637-7946}{ORCID}) [copyright holder]

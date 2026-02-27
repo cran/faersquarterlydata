@@ -5,7 +5,7 @@
 #' List originated from \link{retrieve_faersascii}
 #'
 #' @format A data frame with 200 rows and 38 columns:
-#' @source <https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files>
+#' @source <https://www.fda.gov/drugs/fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files/>
 "als_faers_data"
 
 
@@ -21,6 +21,6 @@
 #' List of approved products by FDA
 #'
 #' @format A data frame.
-#' @source <https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files>
+#' @source <https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files/>
 "products_fda"
 

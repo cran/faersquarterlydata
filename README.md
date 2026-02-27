@@ -28,8 +28,7 @@ The license is GPL-3 (<https://cran.r-project.org/web/licenses/GPL-3>).
 
 ## FDA Adverse Event Reporting System
 
-The Latest Quarterly Data Files from FAERS can be retrieved here:
-<https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files>
+The Latest Quarterly Data Files from FAERS can be retrieved in FDA website.
 
 ## Basic Usage
 

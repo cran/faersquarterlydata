@@ -179,7 +179,7 @@ retrieve_faersascii <- function(ascii_dir, cache_path = NULL, drug_indication_pa
   if (!is.null(drug_indication_pattern) & !is.null(drug_pattern)) {
     drug_indi_info <- drug_info %>%
       inner_join(indi_info %>% group_by(primaryid, caseid, indi_drug_seq) %>%
-        summarise(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
+        reframe(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
         ungroup(), by = c("primaryid", "caseid", "drug_seq" = "indi_drug_seq"))
   }
 
@@ -187,7 +187,7 @@ retrieve_faersascii <- function(ascii_dir, cache_path = NULL, drug_indication_pa
     if (primary_suspect == TRUE) {
       drug_indi_info <- drug_info %>%
         inner_join(indi_info %>% group_by(primaryid, caseid, indi_drug_seq) %>%
-          summarise(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
+          reframe(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
           ungroup(), by = c("primaryid", "caseid", "drug_seq" = "indi_drug_seq"))
     } else {
       drug_indi_info <- indi_info
@@ -203,7 +203,7 @@ retrieve_faersascii <- function(ascii_dir, cache_path = NULL, drug_indication_pa
   if (is.null(drug_indication_pattern) & is.null(drug_pattern)) {
     drug_indi_info <- drug_info %>%
       full_join(indi_info %>% group_by(primaryid, caseid, indi_drug_seq) %>%
-        summarise(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
+        reframe(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
         ungroup(), by = c("primaryid", "caseid", "drug_seq" = "indi_drug_seq"))
   }
 
@@ -349,7 +349,7 @@ unify_tabular_ascii <- function(ascii_list) {
   drug_indi_info <- ascii_list$drug %>%
     mutate_at("drugname", ~stringr::str_squish(.)) %>% 
     left_join(ascii_list$indication %>% group_by(primaryid, caseid, indi_drug_seq) %>%
-      summarise(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
+      reframe(indi_pt = paste(sort(unique(indi_pt)), collapse = "/"), .groups = "keep") %>%
       ungroup(), by = c("primaryid", "caseid", "drug_seq" = "indi_drug_seq")) %>% 
     left_join(ascii_list$therapy %>% 
                 distinct(primaryid, caseid, dsg_drug_seq, .keep_all = TRUE),
@@ -382,7 +382,7 @@ unify_tabular_ascii <- function(ascii_list) {
     left_join(report_source_info, by = c("primaryid", "caseid")) %>%
     left_join(drug_indi_info %>%
       group_by(primaryid, caseid) %>%
-      summarise(
+      reframe(
         indi_pt_all = paste(sort(unique(indi_pt)), collapse = " + "),
         drugname_all = paste(sort(unique(drugname)), collapse = " + "),
         .groups = "keep"
@@ -391,7 +391,7 @@ unify_tabular_ascii <- function(ascii_list) {
     left_join(drug_indi_info %>%
       filter(role_cod == "PS") %>%
       group_by(primaryid, caseid) %>%
-      summarise(
+      reframe(
         indi_pt_ps = sort(unique(indi_pt)),
         drugname_ps = paste(sort(unique(drugname)), collapse = " + "),
         start_dt_ps = unique(start_dt),

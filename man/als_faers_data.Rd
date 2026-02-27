@@ -8,7 +8,7 @@
 A data frame with 200 rows and 38 columns:
 }
 \source{
-<https://www.fda.gov/drugs/questions-and-answers-fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files>
+<https://www.fda.gov/drugs/fdas-adverse-event-reporting-system-faers/fda-adverse-event-reporting-system-faers-latest-quarterly-data-files/>
 }
 \usage{
 als_faers_data

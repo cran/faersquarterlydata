@@ -8,7 +8,7 @@
 A data frame.
 }
 \source{
-<https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files>
+<https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files/>
 }
 \usage{
 products_fda
